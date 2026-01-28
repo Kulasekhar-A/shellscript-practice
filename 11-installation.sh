@@ -10,3 +10,10 @@ fi
 echo "Installing NodeJS"
 dnf install nodejs -y
 
+if [ $? -ne o ]; then
+  echo " Installing NodeJS..FAILURE"
+  exit1
+else
+  echo " Installing NodeJS..SUCCESS"
+fi
+
