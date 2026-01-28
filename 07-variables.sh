@@ -10,3 +10,4 @@ echo "PID of the script : $$"
 sleep 100 &
 echo "PID of recently executed script : $!"
 echo "All args passed to script : $*"
+echo "Exit status of previous command : $?"
