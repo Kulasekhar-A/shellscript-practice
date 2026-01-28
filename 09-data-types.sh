@@ -1,4 +1,4 @@
 #!/bin/bash
 
 NAME=Kulasekhar
-echo "Hello $NAME"
+echo "Leangth of string : ${#NAME}"
