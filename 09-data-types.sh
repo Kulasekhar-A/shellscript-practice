@@ -1,4 +1,5 @@
 #!/bin/bash
 
-NAME=Kulasekhar
-echo "Leangth of string : ${#NAME}"
+echo "Enter your name:"
+read name
+echo "Welcome $name"
