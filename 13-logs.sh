@@ -14,10 +14,10 @@ mkdir -p  $LOGS_FOLDER
 
 VALIDATE(){
    if [ $1 -ne 0 ]; then
-       echo "$2..  FAILURE"
+       echo "$2.. FAILURE"
        exit 1
    else
-       echo "$2..  SUCCESS"
+       echo "$2.. SUCCESS"
    fi
 }
 
@@ -28,7 +28,7 @@ dnf install mysql-server -y &>> $LOGS_FILE
 VALIDATE $? "Installing Mysql"
 
 dnf install nodejs -y &>> $LOGS_FILE
-VALIDATE $? "Installing nodejs"
+VALIDATE $? "Installing Nodejs"
 
 
 
