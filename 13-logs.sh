@@ -13,11 +13,11 @@ fi
 mkdir -p $LOGS_FOLDER
 
 VALIDATE(){
-if [ $1 -ne o ]; then
-  echo " Installing $2..FAILURE"
+if [ $1 -ne 0 ]; then
+  echo " $2..  FAILURE"
   exit1
 else
-  echo " Installing $2..SUCCESS"
+  echo " $2..  SUCCESS"
 fi
 }
 
