@@ -19,7 +19,7 @@ fi
 
 dnf install mysql -y
 
-f [ $? -ne o ]; then
+if [ $? -ne o ]; then
   echo " Installing MySQL..FAILURE"
   exit1
 else
@@ -27,8 +27,7 @@ else
 fi
 
 dnf insstall nginx -y
-
-f [ $? -ne o ]; then
+if [ $? -ne o ]; then
   echo " Installing nginx..FAILURE"
   exit1
 else
