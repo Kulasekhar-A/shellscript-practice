@@ -31,6 +31,6 @@ do
   else
      echo "Already installed,skipping now"
   fi
+done
       
 
-done
