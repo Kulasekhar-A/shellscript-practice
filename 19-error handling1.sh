@@ -19,14 +19,7 @@ fi
 
 mkdir -p  $LOGS_FOLDER
 
-VALIDATE(){
-   if [ $1 -ne 0 ]; then
-       echo -e" $2 ...$R FAILURE  $N" | tee -a $LOGS_FILE
-       exit 1
-   else
-       echo -e " $2 ... $G SUCCESS $N" | tee -a $LOGS_FILE
-   fi
-}
+
 
 for package in $@
 do
@@ -34,7 +27,7 @@ do
   if [ $? -ne 0 ]; then
      echo "$package not installed,installing now"
      dnf install $package -y &>> $LOGS_FILE
-     VALIDATE $? "package installation"
+     #VALIDATE $? "package installation"
   else
      echo -e "$package Already installe ... $Y skipping now $N"
   fi
