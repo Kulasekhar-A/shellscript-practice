@@ -13,19 +13,22 @@ fi
 mkdir -p $LOGS_FOLDER
 
 VALIDATE(){
-if [ $1 -ne 0 ]; then
-  echo " $2..  FAILURE"
-  exit1
-else
-  echo " $2..  SUCCESS"
-fi
+   if [ $1 -ne 0 ]; then
+       echo "$2...  FAILURE"
+       exit1
+   else
+       echo "$2...  SUCCESS"
+   fi
 }
+
+dnf install nginx -y &>> $LOGS_FILE
+VALIDATE $? "Installing Nginx"
+
+dnf install mysql -y &>> $LOGS_FILE
+VALIDATE $? "Installing Mysql"
 
 dnf install nodejs -y &>> $LOGS_FILE
 VALIDATE $? "Installing nodejs"
 
-dnf install mysql -y &>> $LOGS_FILE
-VALIDATE $? "Installing MySQL"
 
-dnf install nginx -y &>> $LOGS_FILE
-VALIDATE $? "Installing Nginx"
+
