@@ -10,16 +10,16 @@ fi
 echo "Installing NodeJS"
 dnf install nodejs -y
 
-if [ $? -ne o ]; then
+if [ $? -ne 0 ]; then
   echo " Installing NodeJS..FAILURE"
   exit 1
 else
   echo " Installing NodeJS..SUCCESS"
 fi
 
-dnf install mysql -y
+dnf install mysql-server  -y
 
-if [ $? -ne o ]; then
+if [ $? -ne 0 ]; then
   echo " Installing MySQL..FAILURE"
   exit 1
 else
@@ -27,7 +27,7 @@ else
 fi
 
 dnf install nginx -y
-if [ $? -ne o ]; then
+if [ $? -ne 0 ]; then
   echo " Installing nginx..FAILURE"
   exit1
 else
