@@ -16,7 +16,7 @@ fi
 
 #find the files in particular directory
 FILES_TO_DELETE=$(find $LOGS_DIR -name "*.log" -mtime +14)
-echo "$FILES_TO_DELETE"
+#echo "$FILES_TO_DELETE"
 
 while IFS= read -r FILE_PATH
 do
