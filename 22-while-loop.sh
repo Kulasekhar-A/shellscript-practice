@@ -2,9 +2,15 @@
 
 count=1
 
-while [ $count -le 5 ]
+# while [ $count -le 5 ]
+# do
+#     echo "Count is: $count"
+#     sleep 1
+#     ((count++))
+# done
+
+while IFS= read -r LINE
 do
-    echo "Count is: $count"
-    sleep 1
-    ((count++))
-done
+  # Process the line here
+  echo "$LINE"
+done < ./12-functions.sh
