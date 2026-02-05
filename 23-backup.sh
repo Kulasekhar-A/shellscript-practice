@@ -8,6 +8,10 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+SOURCE_DIR=$1
+DEST_DIR=$2
+DAYS=$(3: -14)
+
 USERID=$(id -u)
 
 if [ $USERID -ne 0 ]; then
@@ -18,9 +22,19 @@ mkdir -p  $LOGS_FOLDER
 
 USAGE(){
 
-    echo -e " $R USAGE :: sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS> [ default 14 ]$N"
+    echo -e " $R USAGE :: sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS> [ default 14 days ]$N"
 }
 
 if [ $# -lt 2 ]; then
  USAGE
+fi
+
+if [ ! -d $SOURCE_DIR ]; then
+ echo -e "$SOURCE_DIR does not exist $N"
+ exit 1
+fi
+
+if [ ! -d $DEST_DIR ]; then
+ echo -e "$DEST_DIR does not exist $N"
+ exit 1
 fi
