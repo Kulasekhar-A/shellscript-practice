@@ -69,7 +69,7 @@ else
     log "Deleted file : $FILE_PATH"
     done <<< $FILES
   else
-    log "Already archieving is ... $F failure $N"
+    log "Already archieving is ... $F failure $"
     exit 1
   fi
 fi
