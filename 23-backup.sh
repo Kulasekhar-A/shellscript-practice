@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LOGS_FOLDER="/var/log/shell-script"
-LOGS_FILE="/var/log/shell-script/$0.log"
+LOGS_FILE="/var/log/shell-script/backup.log"
 
 R="\e[31m"
 G="\e[32m"
@@ -28,6 +28,7 @@ log(){
 USAGE(){
 
     log " $R USAGE :: sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS> [ default 14 days ]$N"
+    exit 1
 }
 
 if [ $# -lt 2 ]; then
@@ -56,7 +57,7 @@ if [ -z $"{FILES}" ]; then
 else
   log "files to found archieve: $FILES"
   TIMESTAMP=$(date +%F-%H-%M-%S)
-  ZIP_FILE_NAME="$DEST_DIR/shellscript-practice-$TIMESTAMP.tar.gz"
+  ZIP_FILE_NAME="$DEST_DIR/app-logs-$TIMESTAMP.tar.gz"
   tar -zcvf $ZIP_FILE_NAME $(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
 
   if [ -f $ZIP_FILE_NAME ]; then
@@ -69,7 +70,7 @@ else
     log "Deleted file : $FILE_PATH"
     done <<< $FILES
   else
-    log "Already archieving is ... $F failure $N"
+    log "Already archieving is ... $F failure $N
     exit 1
   fi
 fi
