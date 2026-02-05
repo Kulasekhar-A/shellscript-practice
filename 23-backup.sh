@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LOGS_FOLDER="/var/log/shell-script"
-LOGS_FILE="/var/log/shell-script/backup.
+LOGS_FILE="/var/log/shell-script/backup
 
 R="\e[31m"
 G="\e[32m"
