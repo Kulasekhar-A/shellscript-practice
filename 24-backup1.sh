@@ -22,7 +22,7 @@ mkdir -p  $LOGS_FOLDER
 
 log(){
 
-    echo -e "$(date "+%y-%m-%d %H:%M:%S") | $!" | tee -a $LOGS_FILE
+    echo -e "$(date "+%y-%m-%d %H:%M:%S") | $1" | tee -a $LOGS_FILE
     
 }
 USAGE(){
@@ -36,12 +36,12 @@ fi
 
 if [ ! -d $SOURCE_DIR ]; then
    log "source directory : $SOURCE_DIR"
-   exit1
+   exit 1
 fi
 
 if [ ! -d $DEST_DIR ]; then
    log "destination directory : $DEST_DIR"
-   exit1
+   exit 1
 fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
@@ -51,7 +51,7 @@ log "source directory : $SOURCE_DIR"
 log "destination directory : $DEST_DIR"
 log "days : $DAYS"
 
-if [ -z $"{FILES}" ]; then
+if [ -z "${FILES}" ]; then
   log "no files to archieve ... $R SKIPPING $N"
 else
   log "Files found to archieve : $FILES"
