@@ -51,7 +51,7 @@ log "source directory : $SOURCE_DIR"
 log "destination directory : $DEST_DIR"
 log "days : $DAYS"
 
-if [ -z "{FILES}" ]; then
+if [ -z $"{FILES}" ]; then
   log "no files to archieve ... $R SKIPPING $N"
 else
   log "Files found to archieve : $FILES"
