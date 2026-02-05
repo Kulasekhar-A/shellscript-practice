@@ -71,5 +71,5 @@ else
   else
     log "Already archieving is ... $F failure $N"
     exit 1
-
+  fi
 fi
