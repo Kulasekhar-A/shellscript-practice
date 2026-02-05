@@ -10,7 +10,7 @@ N="\e[0m"
 
 SOURCE_DIR=$1
 DEST_DIR=$2
-DAYS=$(3:-14)
+DAYS=${3:-14} # 14 days is the default value, if the user not supplied
 
 USERID=$(id -u)
 
