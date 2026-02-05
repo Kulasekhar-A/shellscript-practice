@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LOGS_FOLDER="/var/log/shell-script"
-LOGS_FILE="/var/log/shell-script/$0.log"
+LOGS_FILE="/var/log/shell-script/backup.log"
 
 R="\e[31m"
 G="\e[32m"
@@ -17,7 +17,7 @@ USERID=$(id -u)
 #to check root user  or not
 
 if [ $USERID -ne 0 ]; then
-  echo -e "$R Please run this script with root user access $N" | tee -a $LOGS_FILE
+  echo -e "$R Please run this script with root user access $N" 
   exit 1
 fi
 
@@ -27,10 +27,10 @@ log(){
 
     echo -e "$(date "+%y-%m-%d %H:%M:%S") | $1" | tee -a $LOGS_FILE
 }
-#what is the backup in source_dir dest_dir days
+#how to use
 USAGE(){
 
-    echo -e "$R USAGE : sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS> [ default 14 days ]$N"
+    log "$R USAGE : sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS> [ default 14 days ]$N"
 }
 
 if [ $# -lt 2 ]; then
@@ -38,12 +38,12 @@ if [ $# -lt 2 ]; then
 fi
 
 if [ ! -d $SOURCE_DIR ]; then
-   echo -e "$R source directory : $SOURCE_DIR does not exist$N"
+   log "$R source directory : $SOURCE_DIR does not exist$N"
    exit 1
 fi 
 
 if [ ! -d $DEST_DIR ]; then
-   echo -e "$R destination directory : $DEST_DIR does not exist$N"
+   log "$R destination directory : $DEST_DIR does not exist$N"
    exit 1
 fi 
 
