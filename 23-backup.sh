@@ -51,6 +51,25 @@ log "source directory : $SOURCE_DIR"
 log "destination directory : $DEST_DIR"
 log "Days : $DAYS"
 
-if [ -z $FILES ]; then
+if [ -z $"{FILES}" ]; then
   log "no files to archieve : $Y skipping ... $N"
+else
+  log "files to found archieve: $FILES"
+  TIMESTAMP=$(date +%F-%H-%M-%S)
+  ZIP_FILE_NAME="$DEST_DIR/shellscript-practice-$TIMESTAMP.tar.gz"
+  find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS | tar -zcvf $ZIP_FILE_NAME
+
+  if [ -f $ZIP_FILE_NAME ]; then
+    log "Already archieving is ... $G success $N"
+    while IFS= read -r FILE_PATH
+    do
+    # Process the line here
+    echo "Deleting file : $FILE_PATH"
+    rm -f $FILE_PATH
+    echo "Deleted file : $FILE_PATH"
+    done <<< $FILES
+  else
+    log "Already archieving is ... $F failure $N"
+    exit 1
+
 fi
