@@ -58,4 +58,3 @@ log "source directory : $SOURCE_DIR"
 log "destination directory :$DEST_DIR"
 log "days : $DAYS"
 
-if [ -z ]
