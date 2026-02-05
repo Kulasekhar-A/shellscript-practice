@@ -27,7 +27,7 @@ log(){
 
 USAGE(){
 
-    echo -e " $R USAGE :: sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS> [ default 14 days ]$N"
+    log " $R USAGE :: sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS> [ default 14 days ]$N"
 }
 
 if [ $# -lt 2 ]; then
@@ -35,12 +35,12 @@ if [ $# -lt 2 ]; then
 fi
 
 if [ ! -d $SOURCE_DIR ]; then
- echo -e "$R source directory : $SOURCE_DIR does not exist $N"
+ loog "$R source directory : $SOURCE_DIR does not exist $N"
  exit 1
 fi
 
 if [ ! -d $DEST_DIR ]; then
- echo -e "$R destination drectory : $DEST_DIR does not exist $N"
+ log "$R destination drectory : $DEST_DIR does not exist $N"
  exit 1
 fi
 
@@ -64,9 +64,9 @@ else
     while IFS= read -r FILE_PATH
     do
     # Process the line here
-    echo "Deleting file : $FILE_PATH"
+    log "Deleting file : $FILE_PATH"
     rm -f $FILE_PATH
-    echo "Deleted file : $FILE_PATH"
+    log "Deleted file : $FILE_PATH"
     done <<< $FILES
   else
     log "Already archieving is ... $F failure $N"
