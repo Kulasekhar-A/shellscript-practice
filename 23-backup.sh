@@ -57,7 +57,7 @@ else
   log "files to found archieve: $FILES"
   TIMESTAMP=$(date +%F-%H-%M-%S)
   ZIP_FILE_NAME="$DEST_DIR/shellscript-practice-$TIMESTAMP.tar.gz"
-  find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS | tar -zcvf $ZIP_FILE_NAME
+  tar -zcvf $ZIP_FILE_NAME $(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
 
   if [ -f $ZIP_FILE_NAME ]; then
     log "Already archieving is ... $G success $N"
