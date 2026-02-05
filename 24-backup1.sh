@@ -67,6 +67,6 @@ if [ -z "{FILES}" ]; then
 else
   log "files found to archieve : $FILES"
   TIMESTAMP=$(date +%F-%H-%M-%S)
-  ZIP_FILE_NAME="$DEST_DIR/app-logs-$TIMESTAMP.tar.gz"
+  ZIP_FILE_NAME="$DEST_DIR/app-logs-$TIMESTAMP.tar.gz
   log "Archieve name : $ZIP_FILE_NAME"
 fi
