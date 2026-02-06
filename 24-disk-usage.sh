@@ -6,10 +6,10 @@ Y="\e[33m"
 N="\e[0m"
 MESSAGE=""
 
-log(){
+#log(){
 
-    echo -e "$(date "+%y-%m-%d %H:%M:%S") | $1" | tee -a $LOGS_FILE
-}
+   # echo -e "$(date "+%y-%m-%d %H:%M:%S") | $1" | tee -a $LOGS_FILE
+#}
 
 DISK_USAGE=$(df -hT | grep -v Filesystem)
 USAGE_THRESHOLD=3
@@ -24,4 +24,4 @@ do
 fi
 done <<< $DISK_USAGE
 
-log "$MESSAGE"
+echo "$MESSAGE"
