@@ -52,7 +52,7 @@ log "source directory : $SOURCE_DIR"
 log "destination directory : $DEST_DIR"
 log "Days : $DAYS"
 
-if [ -z $"{FILES}" ]; then
+if [ -z "${FILES}" ]; then
   log "no files to archieve : $Y skipping ... $N"
 else
   log "files to found archieve: $FILES"
