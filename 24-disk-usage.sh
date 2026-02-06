@@ -12,7 +12,7 @@ MESSAGE=""
 #}
 
 DISK_USAGE=$(df -hT | grep -v Filesystem)
-USAGE_THRESHOLD=3
+USAGE_THRESHOLD=4
 
 while IFS= read -r line
 do
