@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LOGS_DIR="/var/log/myapp"
-LOGS_FILE="/$LOGS_DIR/$0.log"
+#LOGS_FILE="/$LOGS_DIR/$0.log"
 
 if [ ! -d $LOGS_DIR ]; then
     echo "$LOGS_DIR does not exist"
