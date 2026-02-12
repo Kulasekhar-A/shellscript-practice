@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOGS_DIR=var/log/myapp
+LOGS_DIR=/var/log/myapp
 LOGS_FILE="/$LOGS_DIR/$0.log"
 
 if [ ! -d $LOGS_DIR ]; then
