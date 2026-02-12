@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LOGS_DIR="/var/log/myapp"
-#LOGS_FILE="/$LOGS_DIR/$0.log"
+LOGS_FILE="/$LOGS_DIR/$0.log"
 
 if [ ! -d $LOGS_DIR ]; then
     echo "$LOGS_DIR does not exist"
@@ -16,4 +16,4 @@ do
  echo "delete file: $FILE_PATH"
  rm -f $FILE_PATH
  echo "delete file: $FILE_PATH"
-done <<< $FILES_TO_DELETE
+done <<< $FILES_TO_DELET
