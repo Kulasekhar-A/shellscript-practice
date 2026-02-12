@@ -14,5 +14,5 @@ while IFS=read -r FILE_PATH
 do
  echo "delete file: $FILE_PATH"
  rm -r $FILE_PATH
- echo "delete file: "$FILE_PATH
+ echo "delete file: "$FILE_PATS
 done <<< $FILES_TO_DELETE
