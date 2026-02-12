@@ -16,4 +16,4 @@ do
  echo "delete file: $FILE_PATH"
  rm -f $FILE_PATH
  echo "delete file: $FILE_PATH"
-done <<< $FILES_TO_DELET
+done <<< $FILES_TO_DELETE
