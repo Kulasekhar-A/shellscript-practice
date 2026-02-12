@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LOGS_DIR="/var/log/myapp"
-LOGS_FILE="/$LOGS_DIR/$0.log"
+#LOGS_FILE="/$LOGS_DIR/$0.log"
 
 if [ ! -d $LOGS_DIR ]; then
     echo "$LOGS_DIR does not exist"
@@ -9,7 +9,7 @@ if [ ! -d $LOGS_DIR ]; then
 fi
 
 FILES_TO_DELETE=$(find $LOGS_DIR -name "*.log" -type f -mtime +14)
-echo "$FILES_TO_DELETE"
+#echo "$FILES_TO_DELETE"
 
 while IFS= read -r FILE_PATH
 do
