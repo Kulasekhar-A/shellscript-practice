@@ -59,6 +59,6 @@ log "delete file : $file"
 done <<< $FILES
 else
     log "Already archieving is ... $F failure $N"
-    exit 1
+    exit 
 fi
 fi
