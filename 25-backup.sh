@@ -41,3 +41,21 @@ log "backup started"
 log "source directory : $SOURCE_DIR"
 log "destination directory : $DEST_DIR"
 log "Days : $DAYS"
+
+if [ -z "${FILES}" ]; then
+log "no files to archive : skipping"
+else
+log "files found to archive : $FILES"
+TIMESTAMP=$(date +%F-%H-%M-%S)
+ZIP_FILE_NAME="/$DEST_DIR/myapp-$TIMESTAMP.tar.gz"
+tar -zcvf $ZIP_FILE_NAME $(find $SOURCE_DIR -name "*.log" -type f -mtime +"$DATS")
+
+if [ -f $ZIP_FILE_NAME ]; then
+log "archiving is : success"
+while IFS=read -r file
+log "delete file : $file"
+rm -f $file
+log "delete file : $file"
+done <<< $FILES
+fi
+fi
