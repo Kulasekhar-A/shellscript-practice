@@ -16,6 +16,7 @@ USERID=$(id -u)
 
 if [ $USERID -ne 0 ]; then
   echo -e "$R Please run this script with root user access $N" 
+  exit 1
 fi
 
 mkdir -p  $LOGS_FOLDER
