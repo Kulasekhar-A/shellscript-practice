@@ -17,7 +17,7 @@ mkdir -p $LOGS_FOLDER
 
 log(){
 
-    echo "$(date "+%y-%m_%d %H-%M-%S") | $1" | tee -a "$LOGS_FILE"
+    echo "$(date "+%y-%m_%d %H-%M-%S") | $1" | tee -a $LOGS_FILE
 }
 
 USAGE () {
@@ -32,10 +32,12 @@ fi
 
 if [ ! -d $SOURCE_DIR ]; then
 log "source directory : $SOURCE_DIR does not exist"
+exit 1
 fi
 
 if [ ! -d $DEST_DIR ]; then
 log " destination directory : $DEST_DIR does not exist"
+exit 1
 fi
 
 FILES=$(find "$SOURCE_DIR" -name "*.log" -type f -mtime +"$DAYS")
@@ -60,7 +62,7 @@ do
 log "delete file : $file"
 rm -f $file
 log "delete file : $file"
-done <<< "$FILES"
+done <<< $FILES
 else
     log "Already archieving is ... $F failure $N"
     exit 1
