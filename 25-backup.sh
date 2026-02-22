@@ -3,8 +3,8 @@
 LOGS_FOLDER="/var/log/shell-script"
 LOGS_FILE="$LOGS_FOLDER/backup.log"
 
-SOURCE_DIR="/var/log/myapp"
-DEST_DIR=$1
+SOURCE_DIR=$1
+DEST_DIR=$2
 DAYS=${3:-14}
 
 USERID=$(id -u)
@@ -47,8 +47,8 @@ log "no files to archive : skipping"
 else
 log "files found to archive : $FILES"
 TIMESTAMP=$(date +%F-%H-%M-%S)
-ZIP_FILE_NAME="/$DEST_DIR/myapp-$TIMESTAMP.tar.gz"
-tar -zcvf $ZIP_FILE_NAME $(find $SOURCE_DIR -name "*.log" -type f -mtime +"$DATS")
+ZIP_FILE_NAME="$DEST_DIR/myapp-$TIMESTAMP.tar.gz"
+tar -zcvf $ZIP_FILE_NAME $(find $SOURCE_DIR -name "*.log" -type f -mtime +"$DAYS")
 
 if [ -f $ZIP_FILE_NAME ]; then
 log "archiving is : success"
