@@ -57,5 +57,8 @@ log "delete file : $file"
 rm -f $file
 log "delete file : $file"
 done <<< $FILES
+else
+    log "Already archieving is ... $F failure $N"
+    exit 1
 fi
 fi
