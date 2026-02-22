@@ -13,6 +13,8 @@ if [ $USERID -ne 0 ]; then
 echo "please run this script with root user access"
 fi
 
+mkdir -p $LOGS_FOLDER
+
 log(){
 
     echo "$(date "+%y-%m_%d %H-%M-%S") | $1" | tee -a "$LOGS_FILE"
@@ -56,7 +58,7 @@ while IFS=read -r file
 log "delete file : $file"
 rm -f $file
 log "delete file : $file"
-done <<< $FILES
+done <<< "$FILES"
 else
     log "Already archieving is ... $F failure $N"
     exit 1
