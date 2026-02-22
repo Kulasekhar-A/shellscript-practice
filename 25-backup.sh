@@ -55,7 +55,7 @@ tar -zcvf $ZIP_FILE_NAME $(find $SOURCE_DIR -name "*.log" -type f -mtime +"$DAYS
 
 if [ -f $ZIP_FILE_NAME ]; then
 log "archiving is : success"
-while IFS=read -r file
+while IFS= read -r file
 do
 log "delete file : $file"
 rm -f $file
