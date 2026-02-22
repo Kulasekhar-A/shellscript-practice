@@ -29,7 +29,7 @@ USAGE
 fi
 
 if [ ! -d $SOURCE_DIR ]; then
- log "source directory : $SOURCE_DIR does not exist
+ log "source directory : $SOURCE_DIR does not exist"
  exit 1
 fi
 
