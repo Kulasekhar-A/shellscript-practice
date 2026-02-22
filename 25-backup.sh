@@ -23,6 +23,7 @@ log(){
 USAGE () {
 
     log "USAGE :: sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS> [ default 14 days ]"
+    exit 1
 }
 
 if [ $#  -lt 2 ]; then
@@ -55,6 +56,7 @@ tar -zcvf $ZIP_FILE_NAME $(find $SOURCE_DIR -name "*.log" -type f -mtime +"$DAYS
 if [ -f $ZIP_FILE_NAME ]; then
 log "archiving is : success"
 while IFS=read -r file
+do
 log "delete file : $file"
 rm -f $file
 log "delete file : $file"
