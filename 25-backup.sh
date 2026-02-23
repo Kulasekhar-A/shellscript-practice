@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LOGS_FOLDER="/var/log/shell-script"
-LOGS_FILE="$LOGS_FOLDER/backup.log"
+LOGS_FILE="/var/log/shell-script/backup.log"
 
 SOURCE_DIR=$1
 DEST_DIR=$2
@@ -16,7 +16,8 @@ fi
 mkdir -p $LOGS_FOLDER
 
 log() {
-    log "$(date "+%y-%m-%d %H:%M:%S") | $1" | tee -a $LOGS_FILE
+
+    echo "$(date "+%y-%m-%d %H:%M:%S") | $1" | tee -a $LOGS_FILE
 }
 
 USAGE(){
