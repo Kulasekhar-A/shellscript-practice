@@ -20,7 +20,7 @@ log() {
 }
 
 USAGE(){
-    log "USAGE :: sudo backu <SOURCE_DIR> <DEST_DIR> <DAYS> [ default 14 days ]"
+    log "USAGE :: sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS> [ default 14 days ]
     exit 1
 }
 
