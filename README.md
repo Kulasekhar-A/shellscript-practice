@@ -1,7 +1,7 @@
 # Shell Script Practice 🚀
 
 This repository contains shell scripting examples ranging from basic concepts to real-time DevOps use cases.  
-It demonstrates practical automation tasks commonly performed by DevOps engineers in production environments.
+Designed with a focus on automation in Linux production environments, these scripts demonstrate practical tasks performed by DevOps engineers.
 
 ---
 
@@ -37,8 +37,8 @@ It demonstrates practical automation tasks commonly performed by DevOps engineer
 - 20-trap.sh  
 
 ### 🔥 Real-Time Automation Scripts
-- 21-delete-old-logs.sh → ავტომates cleanup of old log files  
-- 23-backup.sh → Performs directory/file backups  
+- 21-delete-old-logs.sh → Automates cleanup of old log files  
+- 23-backup.sh → Performs file/directory backups  
 - 24-disk-usage.sh → Monitors disk usage  
 
 ### 📧 Utility Scripts
@@ -49,14 +49,14 @@ It demonstrates practical automation tasks commonly performed by DevOps engineer
 
 ## 🏢 Real-Time Use Cases
 
-These scripts are designed to simulate real-world DevOps and system administration tasks:
+These scripts simulate common DevOps and system administration tasks:
 
 - Automated log cleanup to manage disk space  
 - Periodic backups for data safety  
 - Disk usage monitoring and reporting  
 - Basic alerting using email scripts  
 
-These are common tasks handled in Linux-based production environments.
+These tasks are commonly executed in Linux-based production environments.
 
 ---
 
@@ -75,23 +75,27 @@ Example:
 
 This runs the backup script daily at 2 AM.
 
+📊 Logging & Error Handling
+
+Scripts are designed with basic logging and error handling to simulate production-level execution and troubleshooting.
+
 📌 Key Features
 Step-by-step learning from basics to advanced concepts
 Real-time automation use cases
 Reusable and modular scripts
-Beginner-friendly with practical examples
+Practical examples aligned with DevOps workflows
 🎯 Learning Outcome
 
 By using this repository, you will:
 
 Understand shell scripting fundamentals
 Gain hands-on experience with automation
-Learn how scripts are used in real DevOps environments
+Learn real-world DevOps scripting practices
 Improve problem-solving using Bash scripting
 🤝 Contributions
 
 Contributions are welcome!
-Feel free to fork this repository and raise pull requests.
+Feel free to fork this repository and submit pull requests.
 
 ⭐ Support
 
@@ -99,4 +103,4 @@ If you find this repository useful, consider giving it a star ⭐
 
 👨‍💻 Author
 
-Kulasekhar-A
+Kulasekhar-
